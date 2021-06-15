@@ -1,16 +1,23 @@
 defmodule Arrow do
 
   def arrow("right", n) do
-    print_ascending(0..n)
+    print_arrow(1..n)
+    print_arrow(n-1..1)
   end
 
-  def print_ascending(n..n) do
-    IO.puts(String.duplicate(" ", n-1) <> "*")
+
+  def arrow("left", n) do
+    print_arrow(n-1..1)
+    print_arrow(1..n)
   end
 
-  def print_asecnding(n1..n2) do
-    Enum.reduce()
+
+  defp print_arrow(n1..n2) do
+    Enum.map(n1..n2, & IO.puts(String.pad_leading("*", &1)))
   end
+
+
+
 
 
 
